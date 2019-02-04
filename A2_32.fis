@@ -1,0 +1,40 @@
+[System]
+Name='A2_32'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='food'
+Range=[0 10]
+NumMFs=2
+MF1='rancid':'trimf',[-4 0 4]
+MF2='delicious':'trimf',[6 10 14]
+
+[Input2]
+Name='service'
+Range=[0 10]
+NumMFs=3
+MF1='poor':'trimf',[-4 0 4]
+MF2='good':'trimf',[1 5 9]
+MF3='excellent':'trimf',[5.98916576381365 9.98916576381365 13.9891657638137]
+
+[Output1]
+Name='tip'
+Range=[0 30]
+NumMFs=3
+MF1='cheap':'trimf',[-12 0 12]
+MF2='average':'trimf',[3 15 27]
+MF3='generous':'trimf',[18 30 42]
+
+[Rules]
+1 1, 1 (1) : 2
+0 2, 2 (1) : 2
+2 3, 3 (1) : 2
